@@ -26,7 +26,7 @@ class NotificationController {
         });
     }
 
-    public function addNotification(title:String, body:String, duration:Float = 5) {
+    public function addNotification(title:String, body:String, duration:Float = 5):Notification {
         notificationCamera ??= new FlxCamera();
         notificationCamera.bgColor = flixel.util.FlxColor.TRANSPARENT;
         if (FlxG.cameras.list.contains(notificationCamera)) FlxG.cameras.remove(notificationCamera, false);
@@ -40,6 +40,8 @@ class NotificationController {
 
         notification.alpha = 0;
         new FlxTimer().start(duration, (_)->notification.targetAlpha = 0);
+
+        return notification;
     }
 
     function add(what:Notification) {
