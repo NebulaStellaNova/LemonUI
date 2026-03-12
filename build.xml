@@ -1,0 +1,27 @@
+<xml>
+    <pragma once="true" />
+    <set name="hxhardware_folder" value="${haxelib:hxhardware}/src" />
+
+    <files id="haxe">
+        <compilerflag value="-I${hxhardware_folder}" />
+    </files>
+
+    <files id="__main__">
+        <compilerflag value="-I${hxhardware_folder}" />
+    </files>
+
+    <files id="hxhardware">
+        <compilerflag value="-I${hxhardware_folder}" />
+        <file name="${hxhardware_folder}/memory.cpp" />
+        <file name="${hxhardware_folder}/cpu.cpp" />
+            <file name="${hxhardware_folder}/gpu.cpp" />
+    </files>
+
+
+    <target id="haxe">
+        <files id="hxhardware" />
+        <section if="windows">
+            <lib name="pdh.lib" />
+        </section>
+    </target>
+</xml>

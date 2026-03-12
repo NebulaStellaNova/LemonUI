@@ -9,6 +9,7 @@
   "contributors": ["NebulaStellaNova", "Rodney"],
   "dependencies": {
     "lime": "",
-    "flixel": ""
+    "flixel": "",
+    "openfl": ""
   }
 }
