@@ -1,0 +1,14 @@
+{
+  "name": "lemon-ui",
+  "url" : "https://github.com/NebulaStellaNova/LemonUI/",
+  "license": "MIT",
+  "tags": ["flixel", "ui"],
+  "description": "A clean ui library with a taste of citris.",
+  "version": "0.0.0",
+  "releasenote": "Initial release of LemonUI.",
+  "contributors": ["NebulaStellaNova", "Rodney"],
+  "dependencies": {
+    "lime": "",
+    "flixel": ""
+  }
+}
