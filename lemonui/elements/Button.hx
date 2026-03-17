@@ -6,6 +6,7 @@ import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import flixel.util.FlxSignal;
 import lemonui.core.ElementBase;
+import lemonui.controllers.TooltipController;
 
 class Button extends ElementBase {
 
@@ -43,6 +44,7 @@ class Button extends ElementBase {
         add(buttonText);
     }
 
+    public var tooltipText:String = "";
     public var hovered:Bool = false;
 
     override function update(elapsed:Float) {
@@ -73,6 +75,10 @@ class Button extends ElementBase {
 
     private function _onClick() {}
     private function _onHeld() {}
-    private function _onMouseIn() {}
-    private function _onMouseOut() {}
+    private function _onMouseIn() {
+        if (tooltipText != "") TooltipController.instance.show(tooltipText);
+    }
+    private function _onMouseOut() {
+        if (tooltipText != "") TooltipController.instance.hide();
+    }
 }
