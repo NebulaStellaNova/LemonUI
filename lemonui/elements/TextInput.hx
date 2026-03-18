@@ -27,7 +27,7 @@ class TextInput extends ElementBase {
     var cursorPos:Int = 0;
     var cursorTimer:Float = 0;
 
-    // This fucking reeks
+    // This reeks
     static var PRINTABLE_KEYS:Array<{key:FlxKey, lower:String, upper:String}> = [
         {key: A, lower: "a", upper: "A"}, {key: B, lower: "b", upper: "B"},
         {key: C, lower: "c", upper: "C"}, {key: D, lower: "d", upper: "D"},
