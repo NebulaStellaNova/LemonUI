@@ -12,7 +12,7 @@ class HBox extends ElementBase {
         this.spacing = spacing;
     }
 
-    public function addElement(element:FlxSprite) {
+     override public function addElement(element:FlxSprite) {
         add(element);
         reflow();
     }

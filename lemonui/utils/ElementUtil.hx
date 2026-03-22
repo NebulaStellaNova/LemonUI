@@ -12,7 +12,7 @@ typedef ObjectComponent = {
     var ?children:Array<ObjectComponent>;
 }
 
-class ComponentUtil {
+class ElementUtil {
 
     public static var example:ObjectComponent = {
         id: "test",
@@ -44,12 +44,12 @@ class ComponentUtil {
                 trace('Unknown ui element typed "${object.type}"');
         }
         for (i in object?.children ?? []) {
-            component.addComponent(buildFromObject(i));
+            component.addElement(buildFromObject(i));
         }
         return component;
     }
 
-    public static function buildFromXML(xmlString:String, ?handlers:Dynamic):lemonui.xml.XMLResult {
-        return lemonui.xml.XMLBuilder.build(xmlString, handlers);
+    public static function buildFromXML(xmlPath:String, ?handlers:Dynamic):lemonui.xml.XMLResult {
+        return lemonui.xml.XMLBuilder.buildFromAsset(xmlPath, handlers);
     }
 }

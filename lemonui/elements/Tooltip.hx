@@ -36,7 +36,7 @@ class Tooltip extends ElementBase {
         background.scrollFactor.set();
         label.scrollFactor.set();
 
-        componentColor = 0xFF3d3f41;
+        elementColor = 0xFF3d3f41;
         alpha = 0;
     }
 

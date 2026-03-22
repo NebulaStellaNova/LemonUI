@@ -18,12 +18,12 @@ class MenuBar extends ElementBase {
     public function new(x:Int = 0, y:Int = 0) {
         super(x, y);
 
-        var background = new FlxSprite(0, 0).makeGraphic(FlxG.width, 35, componentColor);
+        var background = new FlxSprite(0, 0).makeGraphic(FlxG.width, 35, elementColor);
         add(background);
     }
 
-    override function addComponent(component:ElementBase) {
-        super.addComponent(component);
+    override function addElement(component:ElementBase) {
+        super.addElement(component);
 
         var newMenu:Menu = cast component;
         newMenu.parent = this;

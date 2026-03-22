@@ -22,7 +22,7 @@ class XMLBuilder {
     }
 
     public static function buildFromAsset(path:String, ?handlers:Dynamic):XMLResult {
-        var content = openfl.Assets.getText(path);
+        var content = sys.io.File.getContent(path);
         if (content == null) {
             trace('XMLBuilder: asset not found "$path"');
             return new XMLResult(new ElementBase());
@@ -49,13 +49,15 @@ class XMLBuilder {
         if (xAttr != null) el.x = Std.parseFloat(xAttr);
         if (yAttr != null) el.y = Std.parseFloat(yAttr);
 
+        el.id = node.get("id");
+
         result.register(node.get("id"), node.get("class"), el);
 
         wireEvents(el, node, handlers);
 
         var colorAttr = node.get("color");
         if (colorAttr != null && Std.isOfType(el, ElementBase)) {
-            cast(el, ElementBase).componentColor = Std.parseInt(colorAttr);
+            cast(el, ElementBase).elementColor = Std.parseInt(colorAttr);
         }
 
         if (Std.isOfType(parent, VBox)) {
@@ -97,7 +99,7 @@ class XMLBuilder {
         }
     }
 
-    static function createElement(tag:String, node:Xml):flixel.FlxSprite {
+    static function createElement(tag:String, node:Xml):Null<ElementBase> {
         return switch (tag) {
             case "button":
                 new Button(0, 0,
@@ -188,7 +190,7 @@ class XMLBuilder {
             Reflect.setField(el, attr, fn);
         }
     }
-    
+
     static function attrStr(node:Xml, name:String, def:String):String {
         var v = node.get(name);
         return v != null ? v : def;

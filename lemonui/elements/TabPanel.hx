@@ -34,7 +34,7 @@ class TabPanel extends ElementBase {
         tabBar = new FlxSprite(0, 0).makeGraphic(panelWidth, tabHeight, FlxColor.WHITE);
         add(tabBar);
 
-        componentColor = 0xFF3d3f41;
+        elementColor = 0xFF3d3f41;
     }
 
     public function addTab(name:String):Int {
@@ -101,11 +101,11 @@ class TabPanel extends ElementBase {
         for (i in 0...tabs.length) {
             var tab = tabs[i];
             if (i == selectedTab) {
-                tab.bg.color = componentColor;
-                tab.label.color = FlxColor.interpolate(componentColor, FlxColor.WHITE, 0.85);
+                tab.bg.color = elementColor;
+                tab.label.color = FlxColor.interpolate(elementColor, FlxColor.WHITE, 0.85);
             } else {
-                tab.bg.color = FlxColor.interpolate(componentColor, FlxColor.BLACK, 0.25);
-                tab.label.color = FlxColor.interpolate(componentColor, FlxColor.WHITE, 0.5);
+                tab.bg.color = FlxColor.interpolate(elementColor, FlxColor.BLACK, 0.25);
+                tab.label.color = FlxColor.interpolate(elementColor, FlxColor.WHITE, 0.5);
             }
         }
     }

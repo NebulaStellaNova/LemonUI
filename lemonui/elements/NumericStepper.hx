@@ -75,7 +75,7 @@ class NumericStepper extends ElementBase {
         lblDown.alignment = CENTER;
         add(lblDown);
 
-        componentColor = 0xFF3d3f41;
+        elementColor = 0xFF3d3f41;
         value = defaultValue;
     }
 
@@ -142,7 +142,7 @@ class NumericStepper extends ElementBase {
 
     override function onColorChange(value:FlxColor) {
         super.onColorChange(value);
-        if (input != null) input.componentColor = value;
+        if (input != null) input.elementColor = value;
         if (btnUp != null) btnUp.color = FlxColor.interpolate(value, FlxColor.WHITE, 0.3);
         if (btnDown != null) btnDown.color = FlxColor.interpolate(value, FlxColor.WHITE, 0.3);
         if (lblUp != null) lblUp.color = FlxColor.interpolate(value, FlxColor.BLACK, 0.3);

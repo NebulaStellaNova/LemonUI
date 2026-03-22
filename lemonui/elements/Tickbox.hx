@@ -44,7 +44,7 @@ class Tickbox extends ElementBase {
         label.updateHitbox();
         add(label);
 
-        componentColor = 0xFF3d3f41;
+        elementColor = 0xFF3d3f41;
         checked = defaultChecked;
     }
 

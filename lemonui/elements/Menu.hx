@@ -20,8 +20,8 @@ class Menu extends Button {
 
     }
 
-    override function addComponent(component:ElementBase) {
-        super.addComponent(component);
+    override function addElement(component:ElementBase) {
+        super.addElement(component);
 
         var newItem:Button = cast component;
         var lastItem:Button = menuItems[menuItems.length-1];
@@ -38,7 +38,7 @@ class Menu extends Button {
 
         lastItem ??= newItem;
 
-        menuBG.makeGraphic(Math.round((newItem.x - 2) + (newItem.background.width + 5)), Math.round(lastItem.y + newItem.background.height + 10), FlxColor.interpolate(componentColor, FlxColor.BLACK, 0.25));
+        menuBG.makeGraphic(Math.round((newItem.x - 2) + (newItem.background.width + 5)), Math.round(lastItem.y + newItem.background.height + 10), FlxColor.interpolate(elementColor, FlxColor.BLACK, 0.25));
 
         menuItems.push(cast component);
         updateVisibilty();

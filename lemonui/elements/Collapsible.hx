@@ -48,7 +48,7 @@ class Collapsible extends ElementBase {
         add(titleText);
 
         contentY = headerHeight + 4;
-        componentColor = 0xFF3d3f41;
+        elementColor = 0xFF3d3f41;
         isOpen = open;
     }
 

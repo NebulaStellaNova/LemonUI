@@ -27,10 +27,10 @@ class Button extends ElementBase {
     public function new(x:Float = 0, y:Float = 0, width:Int = 100, height:Int = 50, text:String) {
         super(x, y);
 
-        background = new FlxSprite().makeGraphic(width, height, componentColor);
+        background = new FlxSprite().makeGraphic(width, height, elementColor);
         add(background);
 
-        hoverSprite = new FlxSprite().makeGraphic(width, height, FlxColor.interpolate(componentColor, FlxColor.WHITE, 0.25));
+        hoverSprite = new FlxSprite().makeGraphic(width, height, FlxColor.interpolate(elementColor, FlxColor.WHITE, 0.25));
         hoverSprite.alpha = 0;
         add(hoverSprite);
 

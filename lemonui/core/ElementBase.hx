@@ -1,19 +1,36 @@
 package lemonui.core;
 
+import flixel.FlxSprite;
+import flixel.group.FlxSpriteGroup;
 import flixel.util.FlxColor;
 
-class ElementBase extends flixel.group.FlxSpriteGroup {
+class ElementBase extends FlxSpriteGroup {
 
-    public var componentColor(default, set):FlxColor = 0xFF3d3f41;
-    function set_componentColor(value:FlxColor) {
+    public var id:String;
+
+    public var elementColor(default, set):FlxColor = 0xFF3d3f41;
+    function set_elementColor(value:FlxColor) {
         onColorChange(value);
-        return componentColor = value;
+        return elementColor = value;
     }
 
     public function onColorChange(value:FlxColor) {}
 
-    public function addComponent(component:ElementBase) {
+    public function addElement(component:ElementBase) {
         add(component);
+    }
+
+    public function findElement(id:String):Null<ElementBase> {
+        for (i in members) {
+            if (Std.isOfType(i, ElementBase)) {
+                var el:ElementBase = cast i;
+                if (el.id == id) return el;
+                var out = el.findElement(id);
+                if (out != null) return out;
+            }
+        }
+        trace('Could not find element with id "$id"');
+        return null;
     }
 
 }

@@ -48,7 +48,7 @@ class Notification extends ElementBase {
         body.updateHitbox();
         add(body);
 
-        componentColor = 0xFF3d3f41;
+        elementColor = 0xFF3d3f41;
     }
 
     override function onColorChange(value:FlxColor) {

@@ -88,7 +88,7 @@ class Dropdown extends ElementBase {
             listLabels.push(itemLabel);
         }
 
-        componentColor = 0xFF3d3f41;
+        elementColor = 0xFF3d3f41;
         if (options.length > 0) selectedIndex = 0;
     }
 
@@ -174,9 +174,9 @@ class Dropdown extends ElementBase {
         if (isOpen) {
             for (i in 0...listItems.length) {
                 if (FlxG.mouse.overlaps(listItems[i])) {
-                    listItems[i].color = FlxColor.interpolate(componentColor, FlxColor.WHITE, 0.15);
+                    listItems[i].color = FlxColor.interpolate(elementColor, FlxColor.WHITE, 0.15);
                 } else {
-                    listItems[i].color = componentColor;
+                    listItems[i].color = elementColor;
                 }
             }
         }
